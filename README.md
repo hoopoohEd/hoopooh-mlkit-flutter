@@ -23,7 +23,7 @@ Both packages are copied unchanged from upstream PR
 Changes from that commit:
 - Both `ios/*/Package.swift` files depend on
   [`hoopooh-mlkit-swiftpm`](https://github.com/hoopoohEd/hoopooh-mlkit-swiftpm)
-  (`9.0.0-hoopooh.1`), a trimmed copy of the binary wrapper the PR used.
+  (`9.0.0-hoopooh.2`), a trimmed copy of the binary wrapper the PR used.
 - Commons depends on the `MLKitVision` product, not `MLKitBarcodeScanning`. The
   barcode product was only there because the PR's wrapper had no vision-only
   product.
@@ -56,8 +56,19 @@ dependency_overrides:
       path: packages/google_mlkit_commons
 ```
 
-The app needs Swift Package Manager enabled (`enable-swift-package-manager: true`)
-and iOS 15.5 or later.
+The app needs, on iOS:
+- Swift Package Manager enabled (`enable-swift-package-manager: true`) and
+  iOS 15.5 or later.
+- **`GoogleMVFaceDetectorResources.bundle` as an app resource** (Runner target,
+  Copy Bundle Resources). ML Kit loads its face models only from the top level
+  of the app bundle, and Swift Package Manager cannot put them there. Without
+  it, detection silently returns no faces. See the wrapper's README for where
+  the bundle comes from.
+- **`-ObjC` in the Runner target's Other Linker Flags.** ML Kit is static
+  Objective-C, and without the flag category-only object files are dropped:
+  it crashes after detection with
+  `-[MLKITx_CCTLogContext hashForFilePath]: unrecognized selector`.
+  CocoaPods used to add this flag automatically.
 
 ## When to drop this
 

@@ -16,7 +16,7 @@ let package = Package(
         .package(path: "../../../google_mlkit_commons/ios/google_mlkit_commons"),
         .package(
             url: "https://github.com/hoopoohEd/hoopooh-mlkit-swiftpm",
-            exact: "9.0.0-hoopooh.1"
+            exact: "9.0.0-hoopooh.2"
         )
     ],
     targets: [
