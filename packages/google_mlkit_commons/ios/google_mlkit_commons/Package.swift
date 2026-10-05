@@ -14,7 +14,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/OWNER_PLACEHOLDER/hoopooh-mlkit-swiftpm",
+            url: "https://github.com/hoopoohEd/hoopooh-mlkit-swiftpm",
             exact: "9.0.0-hoopooh.1"
         )
     ],

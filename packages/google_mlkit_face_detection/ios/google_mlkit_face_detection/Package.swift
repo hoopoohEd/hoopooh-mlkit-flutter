@@ -15,7 +15,7 @@ let package = Package(
     dependencies: [
         .package(path: "../../../google_mlkit_commons/ios/google_mlkit_commons"),
         .package(
-            url: "https://github.com/OWNER_PLACEHOLDER/hoopooh-mlkit-swiftpm",
+            url: "https://github.com/hoopoohEd/hoopooh-mlkit-swiftpm",
             exact: "9.0.0-hoopooh.1"
         )
     ],

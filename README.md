@@ -22,7 +22,7 @@ Both packages are copied unchanged from upstream PR
 
 Changes from that commit:
 - Both `ios/*/Package.swift` files depend on
-  [`hoopooh-mlkit-swiftpm`](https://github.com/OWNER_PLACEHOLDER/hoopooh-mlkit-swiftpm)
+  [`hoopooh-mlkit-swiftpm`](https://github.com/hoopoohEd/hoopooh-mlkit-swiftpm)
   (`9.0.0-hoopooh.1`), a trimmed copy of the binary wrapper the PR used.
 - Commons depends on the `MLKitVision` product, not `MLKitBarcodeScanning`. The
   barcode product was only there because the PR's wrapper had no vision-only
@@ -44,14 +44,14 @@ both must come from the same commit.
 dependencies:
   google_mlkit_face_detection:
     git:
-      url: https://github.com/OWNER_PLACEHOLDER/hoopooh-mlkit-flutter
+      url: https://github.com/hoopoohEd/hoopooh-mlkit-flutter
       ref: <commit sha>
       path: packages/google_mlkit_face_detection
 
 dependency_overrides:
   google_mlkit_commons:
     git:
-      url: https://github.com/OWNER_PLACEHOLDER/hoopooh-mlkit-flutter
+      url: https://github.com/hoopoohEd/hoopooh-mlkit-flutter
       ref: <same commit sha>
       path: packages/google_mlkit_commons
 ```
