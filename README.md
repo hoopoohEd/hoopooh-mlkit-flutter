@@ -23,7 +23,7 @@ Both packages are copied unchanged from upstream PR
 Changes from that commit:
 - Both `ios/*/Package.swift` files depend on
   [`hoopooh-mlkit-swiftpm`](https://github.com/hoopoohEd/hoopooh-mlkit-swiftpm)
-  (`9.0.0-hoopooh.2`), a trimmed copy of the binary wrapper the PR used.
+  (`9.0.0-hoopooh.3`), a trimmed copy of the binary wrapper the PR used.
 - Commons depends on the `MLKitVision` product, not `MLKitBarcodeScanning`. The
   barcode product was only there because the PR's wrapper had no vision-only
   product.
